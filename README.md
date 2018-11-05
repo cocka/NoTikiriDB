@@ -1,17 +1,17 @@
-TikiriDB
+NoTikiriDB
 ==========
 
 Introduction
 ------------------------------------------------------------------------------------
 
-TikiriDB is a database abstraction layer for Contiki operating system which enables 
+NoTikiriDB is a database abstraction layer for Contiki operating system which enables 
 a query interface to acquire required data in highly efficient manner. After setting 
-up the sensor network with TikiriDB, it is possible to gather data without having 
-the knowledge of programming sensor nodes. TikiriDB will provide a query language 
+up the sensor network with NoTikiriDB, it is possible to gather data without having 
+the knowledge of programming sensor nodes. NoTikiriDB will provide a query language 
 which is more similar to conventional query language with additional syntax to 
 comply with sensor network environment. 
 
-Current version of TikiriDB is only designed to run on Cooja which is the simulator 
+Current version of NoTikiriDB is only designed to run on Cooja which is the simulator 
 used in Contiki operating system.
 
  High-Level Functional Overview
@@ -67,10 +67,10 @@ serial_forwarder: plugin for cooja is located in cooja>plugins the installation 
 of the plugin is illustrated bellow. This plugin will enable the connectivity of cooja simulated
 environment and tikirisql.
 
-tikirisql: the TikiriDB client which parses and validates the query and  is locate in gateway directory. 
+tikirisql: the NoTikiriDB client which parses and validates the query and  is locate in gateway directory. 
 
-test-apps: the testing implementations of qprodessor TikiriDB library. This will be used to 
-test the functionality of the TikiriDB system.
+test-apps: the testing implementations of qprodessor NoTikiriDB library. This will be used to 
+test the functionality of the NoTikiriDB system.
 
 Other components developed and under development which is required for real  deployment
   *. serial-forwarder-cpp 
@@ -82,7 +82,7 @@ through serial port.
 
 routing: implementing the energy efficient routing protocol
 
-tikiriac: access control module for TikiriDB to prevent unauthorized access, control different privilege levels,
+tikiriac: access control module for NoTikiriDB to prevent unauthorized access, control different privilege levels,
 prevent node capturing attacks, ... etc. 
 
 Installation
@@ -114,7 +114,7 @@ The following installation steps are for a Debian based systems(i.e: debian, ubu
  Note: The term `<Contiki Directory>` is used to denote the directory where 
        the Contiki is installed.
 
-3. Install additional packages that are needed to compile tikirisql(TikiriDB client).
+3. Install additional packages that are needed to compile tikirisql(NoTikiriDB client).
    In the terminal type: 
 
    `# apt-get install flex bison`
@@ -122,23 +122,23 @@ The following installation steps are for a Debian based systems(i.e: debian, ubu
 4. Compile tikirisql client
     In the terminal type:
     ```
-    # cd <TikiriDB directory>/gateway/tikirisql
+    # cd <NoTikiriDB directory>/gateway/tikirisql
     # make
     ```
 
 5. Configure Contiki source
-   Open the file `<TikiriDB directory>/test-apps/Makefile` with your favorite 
+   Open the file `<NoTikiriDB directory>/test-apps/Makefile` with your favorite 
    text editor and set the Contiki installation directory appropriately.
 
-Running TikiriDB
+Running NoTikiriDB
 ----------------------------------------------------------------------------------------------- 
 
-For the sake of convenience, a saved Cooja simulation file can be used to test TikiriDB.
-The saved  simulation files are located at <TikiriDB directory>/test-apps directory.
+For the sake of convenience, a saved Cooja simulation file can be used to test NoTikiriDB.
+The saved  simulation files are located at <NoTikiriDB directory>/test-apps directory.
 
 To run the simulation, 
 In the terminal, type:
-  `# cd <TikiriDB directory>/test-apps`
+  `# cd <NoTikiriDB directory>/test-apps`
   `# make test-app.csc`
 
 Or you can compile from the biginning using following commands,
@@ -150,7 +150,7 @@ the simulation. The default port for the Serial Forwarder will be 25600 + node i
 
 To run tikirisql,
 In the terminal, type:
-  `# cd cd <TikiriDB directory>/gateway/tikirisql`
+  `# cd cd <NoTikiriDB directory>/gateway/tikirisql`
   `# ./tikirisql -H localhost -P 25601`
 
 To get the tikirisql help use the command "\h"(without quotes) in the tsql prompt.
@@ -169,8 +169,8 @@ TODO
 
 * Many portions of the system(i.e: protocols used) are undocumented. Therefore, a
   proper documentation has to be done.
-* Port TikiriDB to run on real sensor node platforms(i.e: sky, MICAz)   
-* Implementing TikiriAC access control module for TikiriDB
+* Port NoTikiriDB to run on real sensor node platforms(i.e: sky, MICAz)   
+* Implementing TikiriAC access control module for NoTikiriDB
 * Add more functionalities to tikirisql query language
 * Develop friendly user interfaces for tikirisql client
-* Energy efficient routing protocol for long term usage of TikiriDB
+* Energy efficient routing protocol for long term usage of NoTikiriDB
